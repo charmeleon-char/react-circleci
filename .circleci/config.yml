@@ -2,6 +2,10 @@ orbs:
   node: circleci/node@4.2.1
 
 version: 2.1
+parameters:
+  workingdir:
+    type: boolean
+    default: true
 steps:
   - run:
       name: Setup Environment Variables
@@ -11,7 +15,7 @@ workflows:
   app-tests:
     when:  
       condition:
-        equal: [ true, $DEPLOY_STATE_FREEZE ]
+        equal: [ true, << pipeline.parameters.workingdir >>"]
       jobs:
         - node/test
     run: echo 0
