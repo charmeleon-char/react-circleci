@@ -12,6 +12,3 @@ workflows:
     when: << pipeline.parameters.run_integration_tests >>
     jobs:
         - node/test
-
-        d7c03943e9da3037b0aa36d0a52d8b2c07b6d471
-        03b11f8892726564c1ab3d8d2d5a18c34107314e
