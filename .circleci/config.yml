@@ -2,12 +2,13 @@ orbs:
   node: circleci/node@4.2.1
 
 version: 2.1
+parameters:
+  run_integration_tests:
+    type: boolean
+    default: false
+
 workflows:
-  conditional-workflow:
-    when:
-      conditional:
-        - equal: [ true, true ]
-      jobs:
-        - node/test
+  integration_tests:
+    when: << pipeline.parameters.run_integration_tests >>
     jobs:
         - node/test
