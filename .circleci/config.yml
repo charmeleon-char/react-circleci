@@ -9,6 +9,6 @@ parameters:
 
 workflows:
   integration_tests:
-    when: $DEPLOY_STATE_FREEZE_V3
+    when: false
     jobs:
         - node/test
