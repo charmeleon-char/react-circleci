@@ -2,20 +2,12 @@ orbs:
   node: circleci/node@4.2.1
 
 version: 2.1
-parameters:
-  workingdir:
-    type: boolean
-    default: true
-steps:
-  - run:
-      name: Setup Environment Variables
-      command: |
-        echo $DEPLOY_STATE_FREEZE
 workflows:
-  app-tests:
-    when:  
-      and:
-        - equal: [ main,<< pipeline.git.branch >>]
+  conditional-workflow:
+    when:
+      conditional:
+        - equal: [ master, << pipeline.git.branch >> ]
       jobs:
         - node/test
-    run: echo 0
+    jobs:
+        - node/test
