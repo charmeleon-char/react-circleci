@@ -6,7 +6,7 @@ workflows:
   conditional-workflow:
     when:
       conditional:
-        - equal: [ master, << pipeline.git.branch >> ]
+        - equal: [ true, true ]
       jobs:
         - node/test
     jobs:
