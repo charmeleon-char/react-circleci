@@ -15,7 +15,7 @@ workflows:
   app-tests:
     when:  
       condition:
-        equal: [ true, "/<< pipeline.parameters.workingdir >>"]
+        equal: [ true, "<< pipeline.parameters.workingdir >>"]
       jobs:
         - node/test
     run: echo 0
