@@ -5,7 +5,7 @@ version: 2.1
 parameters:
   run_integration_tests:
     type: boolean
-    default: false
+    default: $DEPLOY_STATE_FREEZE
 
 workflows:
   integration_tests:
