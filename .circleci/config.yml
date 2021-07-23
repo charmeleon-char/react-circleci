@@ -4,6 +4,11 @@ orbs:
 version: 2.1
 
 workflows:
+  show-variable: 
+    jobs:
+        name: "What branch am I on now?"
+        command: echo $DEPLOY_STATE_FREEZE
   app-tests:
+    when: << $DEPLOY_STATE_FREEZE >>
     jobs:
       - node/test
