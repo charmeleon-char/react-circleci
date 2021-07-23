@@ -4,12 +4,13 @@ orbs:
 version: 2.1
 
 workflows:
-  show-variable: 
-    steps:
-      - run:
-          name: Setup Environment Variables
-          command: |
-            echo "DEPLOY_STATE_FREEZE""
+  show-variable:
+    jobs:
+      steps:
+        - run:
+            name: Setup Environment Variables
+            command: |
+              echo "DEPLOY_STATE_FREEZE""
   app-tests:
     when: << $DEPLOY_STATE_FREEZE >>
     jobs:
