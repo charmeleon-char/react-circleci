@@ -3,13 +3,14 @@ orbs:
 
 version: 2.1
 steps:
-  - checkout
   - run:
       name: Setup Environment Variables
       command: |
         echo $DEPLOY_STATE_FREEZE
 workflows:
   app-tests:
-    when:  '\<< $DEPLOY_STATE_FREEZE >>'
-    jobs:
-      - node/test
+    when:  
+      condition:
+        equal: [ true, $DEPLOY_STATE_FREEZE ]
+      jobs:
+        - node/test
