@@ -10,6 +10,6 @@ steps:
         echo $DEPLOY_STATE_FREEZE
 workflows:
   app-tests:
-    when:  '<< $DEPLOY_STATE_FREEZE >>'
+    when:  '\<< $DEPLOY_STATE_FREEZE >>'
     jobs:
       - node/test
