@@ -2,14 +2,12 @@ orbs:
   node: circleci/node@4.2.1
 
 version: 2.1
-jobs:
-  build:
-    steps:
-      - checkout
-      - run:
-          name: Setup Environment Variables
-          command: |
-            echo $DEPLOY_STATE_FREEZE
+steps:
+  - checkout
+  - run:
+      name: Setup Environment Variables
+      command: |
+        echo $DEPLOY_STATE_FREEZE
 workflows:
   app-tests:
     when: << $DEPLOY_STATE_FREEZE >>
