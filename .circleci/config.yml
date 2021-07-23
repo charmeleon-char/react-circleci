@@ -14,8 +14,8 @@ steps:
 workflows:
   app-tests:
     when:  
-      condition:
-        - equal: [ main, << pipeline.git.branch >> ]
+      and:
+        - equal: [ main,<< pipeline.git.branch >>]
       jobs:
         - node/test
     run: echo 0
