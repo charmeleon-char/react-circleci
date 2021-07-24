@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:  | 
-          commit_message= ${DEPLOY_STATE_FREEZE_V4}
+          commit_message= \"${DEPLOY_STATE_FREEZE_V4}\"
           if [[ $commit_message == *"custom-identifier"* ]]; then
           curl --request POST \
             --url https://circleci.com/api/v2/workflow/$CIRCLE_WORKFLOW_ID/cancel \
