@@ -3,12 +3,14 @@ orbs:
 
 version: 2.1
 parameters:
-  run_integration_tests:
-    type: boolean
-    default: false
+  condition_needed:
+    default: DEPLOY_STATE_FREEZE_V3
+    type: env_var_name
 
 workflows:
   integration_tests:
-    when: false
+    when: 
+      condition:
+        equal: [ true, "${<< parameters.condition_needed >>}" ]
     jobs:
         - node/test
