@@ -10,8 +10,7 @@ jobs:
     steps:
       - checkout
       - run:  | 
-          commit_message= $DEPLOY_STATE_FREEZE_V3
-          if [[ $commit_message == *"freezeStart"* ]]; then
+          if [[ $DEPLOY_STATE_FREEZE_V3 == *"freezeStart"* ]]; then
           curl --request POST \
             --url https://circleci.com/api/v2/workflow/$CIRCLE_WORKFLOW_ID/cancel \
             --header "Circle-Token: 03b11f8892726564c1ab3d8d2d5a18c34107314e"
