@@ -5,6 +5,8 @@ version: 2.1
 
 jobs:
   test:
+    docker: # executor type
+      - image: buildpack-deps:trusty
     steps:
       - checkout
       - run:  | 
