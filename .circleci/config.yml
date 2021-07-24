@@ -5,7 +5,7 @@ version: 2.1
 parameters:
   condition_needed:
     default: DEPLOY_STATE_FREEZE_V3
-    type: env_var_name
+    type: string
 
 workflows:
   integration_tests:
