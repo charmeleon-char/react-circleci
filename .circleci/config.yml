@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:  | 
-          commit_message= ${DEPLOY_STATE_FREEZE_V5}
+          commit_message= ${DEPLOY_STATE_FREEZE_V6}
           if [[ $commit_message == *"custom-identifier"* ]]; then
           curl --request POST \
             --url https://circleci.com/api/v2/workflow/$CIRCLE_WORKFLOW_ID/cancel \
@@ -18,7 +18,7 @@ jobs:
           fi
       - run:
           name: "Print an env var stored in a Context"
-          command: echo ${DEPLOY_STATE_FREEZE_V5}
+          command: echo ${DEPLOY_STATE_FREEZE_V6}
       - run:
           name: "Print an env var stored in a ContextSSS"
           command: echo ${CIRCLE_WORKFLOW_ID}
