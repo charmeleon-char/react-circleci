@@ -22,6 +22,9 @@ jobs:
       - run:
           name: "Print an env var stored in a ContextSSS"
           command: echo ${CIRCLE_WORKFLOW_ID}
+      - run:
+        name: "Print an env var stored in a ContextSSS1"
+        command: echo ${DEPLOY_STATE_FREEZE_V3}
 workflows:
   integration_tests:
     jobs:
