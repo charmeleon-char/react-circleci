@@ -25,8 +25,8 @@ jobs:
           name: "Print an env var stored in a ContextSSS1"
           command: echo ${DEPLOY_STATE_FREEZE_V3}
       - run:
-        name: "equal VARIABLE"
-        command: echo ${DEPLOY_STATE_FREEZE_V3} ==  *"freezeStart"*
+          name: "equal VARIABLE"
+          command: echo ${DEPLOY_STATE_FREEZE_V3} ==  *"freezeStart"*
 workflows:
   integration_tests:
     jobs:
