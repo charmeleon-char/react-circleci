@@ -18,7 +18,7 @@ jobs:
           fi
       - run:
           name: "Print an env var stored in a ContextSSS1"
-          command: echo $TEST_VAR
+          command: echo ${TEST_VAR}
 workflows:
   integration_tests:
     jobs:
