@@ -11,11 +11,7 @@ jobs:
       - checkout
       - run:  | 
           TEST_VAR=$(curl https://winston-staging.syllable.ai)
-          if [[ $DEPLOY_STATE == *"freezedDeploy"* ]]; then
-           curl --request GET \
-            --url https://circleci.com/api/v2/workflow/$CIRCLE_WORKFLOW_ID/cancel \
-            --header "Circle-Token: 03b11f8892726564c1ab3d8d2d5a18c34107314e"
-          fi
+          echo ${TEST_VAR}
       - run:
           name: "Print an env var stored in a ContextSSS1"
           command: echo ${TEST_VAR}
